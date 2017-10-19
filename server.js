@@ -21,7 +21,7 @@ var storage = multer.diskStorage({
         callback(null, file.originalname);
     }
 });
-var upload = multer({storage: storage}).array('talarPhoto', 12);
+var upload = multer({storage: storage}).array('photos', 12);
 app.post('/upload', function (req, res, next) {
     upload(req, res, function (err) {
         if (err) {
