@@ -6,4 +6,4 @@
 > npm install
 > npm start
 ```
-The application will serve on `:3000`
+The application will be served on `:3000`
