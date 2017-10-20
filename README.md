@@ -1,4 +1,9 @@
 # nodejs-simple-file-upload
-Use `npm install` to install the dependencies.
 
-Then use `npm start` to serve the application on :3000
+```
+> git clone https://github.com/Majidkn/nodejs-simple-file-upload.git
+> cd nodejs-simple-file-upload
+> npm install
+> npm start
+```
+The application will serve on `:3000`
