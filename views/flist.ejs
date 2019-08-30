@@ -1,0 +1,17 @@
+<%- include('partial/header'); %>
+<ul>
+    <%
+        if (avaiableFiles) {
+            avaiableFiles.forEach(function(file){
+    %>
+            <li><a href="/static/<%= file %>" target="_blank"><%= file %></a></li>
+    <%
+            });
+        } else {
+    %>
+        <li>No files are avaiable</li>
+    <% } %>
+</ul>
+<p><a href="/">&lt; Go Back</a></p>
+
+<%- include('partial/footer'); %>

@@ -1,36 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Node.js Simple File Upload</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <style>
-        #uploadForm{
-            padding-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        input.btn{
-            flex: 0.8;
-        }
-        button.btn{
-            flex: 0.15;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="files"
-            class="btn btn-primary" id="file"
-            multiple>
-            <button class="btn btn-primary" type="submit" style="border-radius: 4px;">
-                Upload
-            </button>
-        </form>
-    </div>
-    <script type="text/javascript">
-        document.getElementById("file").value = "";
-    </script>
-</body>
-</html>
+<%- include('partial/header'); %>
+<ul>
+<%
+    if (allOSIps) {
+        allOSIps.forEach(function(ip){
+%>
+        <li><%= ip.name %> - <a href="http://<%= ip.address %>:<%= applicationPort %>" target="_blank"><%= ip.address %>:<%= applicationPort %></a></li>
+<%
+        });
+    }
+%>
+</ul>
+<form action="/upload" method="post" class="myUploadForm" enctype="multipart/form-data">
+    <input type="file" name="files"
+    class="btn btn-primary" id="file"
+    multiple>
+    <button class="btn btn-primary" type="submit" style="border-radius: 4px;">
+        Upload
+    </button>
+</form>
+<p><a href="/flist">List of uploaded files</a></p>
+<script type="text/javascript">
+    document.getElementById("file").value = "";
+</script>
+<%- include('partial/footer'); %>
